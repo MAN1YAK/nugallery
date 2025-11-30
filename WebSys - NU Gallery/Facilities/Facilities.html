@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facilities</title>
+
+  <style>
+    /* FONTS DECLARATION */
+    @font-face {
+      font-family: Ruda-Black;
+      src: url('../.fonts/Ruda-Black.TTF');
+    }
+
+    @font-face {
+      font-family: Regular;
+      src: url('../.fonts/OpenSans-Regular.ttf');
+    }
+
+    @font-face {
+      font-family: Bold;
+      src: url('../.fonts/OpenSans-Bold.TTF');
+    }
+
+
+    /* COLORS DECLARATION */
+    :root {
+      --nu-blue: #2C3E75;
+      --nu-gold: #D4A62A;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Regular;
+    }
+
+    /* BANNER HEADER STYLES */
+    .banner-header {
+      width: 100%;
+      height: 100px;
+      background-color: var(--nu-blue);
+      display: flex;
+      align-items: center;
+    }
+
+    .banner-header img {
+      height: 70px;
+      margin-right: 10px;
+      margin-left: 20px;
+    }
+
+    .banner-header h1 {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: left;
+      font-family: Ruda-Black;
+    }
+
+    /* SEPERATOR STYLES */
+    hr.large {
+      border: 0;
+      border-top: 20px solid var(--nu-gold);
+      margin: 0;
+    }
+
+    hr.medium {
+      border: 0;
+      border-top: 5px solid var(--nu-gold);
+      margin: 0 100px;
+    }
+
+    hr.small {
+      border: 0;
+      border-top: 1px solid black;
+      margin: 0 100px;
+    }
+
+    /* INTRODUTION HEADER STYLES */
+    .introduction {
+      height: 300px;
+      background-color: #5f6f9c;
+      display: flex;
+    }
+
+    .introduction h1 {
+      z-index: 100;
+      font-size: 45px;
+      font-family: Bold;
+      margin-left: 50px;
+      margin-top: auto;
+      color: white;
+    }
+
+    .introduction-image {
+      width: 100%;
+      height: 300px;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      z-index: 0;
+      opacity: 0.2;
+
+      animation-name: animate;
+      animation-duration: 30s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-play-state: running;
+      animation-fill-mode: both;
+    }
+
+    @keyframes animate {
+
+      0%,
+      100% {
+        background-image: url(.resources/intro_image-1-transformed.png);
+      }
+
+      33% {
+        background-image: url(.resources/intro_image-2-transformed.png);
+      }
+
+      66% {
+        background-image: url(.resources/intro_image-3-transformed.png);
+      }
+    }
+
+    /* NAVIGATION BAR STYLES */
+    .navigation-bar {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin-left: 50px;
+    }
+
+    .navigation-bar a {
+      color: black;
+      text-decoration: none;
+      padding: 0 50px;
+      font-family: Bold;
+    }
+
+    /* ON THIS PAGE STYLES */
+    .onThisPage {
+      display: flex;
+      flex-direction: row;
+      font-family: Regular;
+      margin-bottom: 60px;
+    }
+
+    .onThisPage-left {
+      margin-left: 100px;
+      margin-right: 40px;
+      width: 300px;
+    }
+
+    .onThisPage-right {
+      margin-right: 100px;
+      margin-left: 20px;
+      width: 100%;
+      font-size: 20px;
+      text-align: justify;
+    }
+
+    .showcase-title {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .showcase-title h1 {
+      font-size: 45px;
+      font-weight: lighter;
+    }
+
+    /* SHOWCASE PART STYLES */
+
+    .showcase {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      margin-left: auto;
+      margin-bottom: 100px;
+    }
+
+    .showcase table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .showcase h1 {
+      font-size: 25px;
+    }
+
+    .showcase p {
+      font-size: 20px;
+      width: 100%;
+    }
+
+    .showcase-content {
+      width: 100%;
+      max-width: 1300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: self-start;
+    }
+
+    .showcase-content table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .showcase-text {
+      text-align: right;
+    }
+
+    .showcase-image-container {
+      text-align: center;
+    }
+
+    .showcase-image {
+      height: 400px;
+      width: auto;
+      border: 20px solid #d8b638;
+    }
+
+    button:hover {
+      background-color: #007bff;
+    }
+
+    button:hover {
+      background-color: #007bff;
+    }
+
+    /* BANNER FOOTER STYLES */
+    .banner-footer {
+      width: 100%;
+      height: 300px;
+      background-color: var(--nu-blue);
+      display: flex;
+    }
+
+    .banner-footer img {
+      height: 70px;
+      margin-right: 10px;
+      margin-left: 50px;
+      margin-top: 30px;
+    }
+
+    .banner-footer h1 {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: left;
+      font-family: Ruda-Black;
+      margin-top: 40px;
+    }
+
+    .banner-footer h2 {
+      margin-top: 115px;
+      margin-left: 50px;
+      position: absolute;
+      color: white;
+      font-size: 15px;
+      font-family: Regular;
+      font-weight: 500;
+    }
+
+    .banner-footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .banner-footer-links {
+      margin-top: 40px;
+      margin-left: auto;
+      margin-right: 70px;
+      color: white;
+      font-size: 15px;
+      font-family: Regular;
+    }
+
+    .banner-footer-links table {
+      border-collapse: collapse;
+      text-align: left;
+      vertical-align: top;
+      border-spacing: 15px;
+    }
+
+    .banner-footer-links th {
+      padding-bottom: 20px;
+      font-size: 15px;
+      color: #959689;
+      font-family: Regular;
+      font-weight: 100;
+    }
+
+    .banner-footer-links td {
+      padding-right: 70px;
+      padding-bottom: 5px;
+      color: #D9D9D9;
+    }
+
+    .banner-footer-links a {
+      color: #D9D9D9;
+      text-decoration: none;
+    }
+
+    .banner-footer-lower {
+      position: absolute;
+      margin-top: 220px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .banner-footer-lower-seperator {
+      width: 95%;
+      height: 1px;
+      background-color: white;
+    }
+
+    .banner-footer-lower p {
+      font-family: Regular;
+      color: white;
+      margin-top: 20px;
+    }
+
+    /* LINKS HOVER COLOR */
+    a:hover {
+      color: #007bff;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- TOP BANNER -->
+  <div class="banner-header">
+    <img src="../.global-resources/NU_Logo.png">
+    <h1>NATIONAL<br>
+      UNIVERSITY
+    </h1>
+  </div>
+
+  <hr class="large">
+
+  <div class="introduction">
+    <h1>FACILITIES</h1>
+    <div class="introduction-image">
+    </div>
+  </div>
+
+  <!-- NAVIGATION LINKS BAR -->
+  <div class="navigation-bar">
+    <table>
+      <tr>
+        <td><a href="../Home/Home.html">HOME</a></td>
+        <th>-</th>
+        <td><a href="../About/About.html">ABOUT</a></td>
+        <th>-</th>
+        <td><a href="../Register/Register.html">REGISTER</a></td>
+        <th>-</th>
+        <td><a href="../Gallery/Gallery.html"><u>GALLERY</u></a></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ON THIS PAGE SECTION -->
+  <div class="onThisPage">
+    <div class="onThisPage-left">
+      <b>On This Page:</b><br><br>
+      • Common Area, Arts & Cultural Facilities and Gym<br>
+      • Learning Resources Conference and Library<br>
+      • Pharmacy and MedTech Lab<br>
+      • Nursing<br>
+      • HRM<br>
+      • Engineering and Architecture<br>
+      • Classrooms, Lecture Rooms and Computer Lab<br>
+    </div>
+    <div class="onThisPage-right">
+      Our facilities section is designed to give you an extensive overview of the diverse array of buildings, amenities, 
+      and spaces that contribute to our campus being an ideal environment for both education and personal development. 
+      Explore the various locations where our students immerse themselves in studies, engage in innovation, and flourish 
+      in their pursuits. Discover firsthand how these spaces foster creativity, collaboration, and academic excellence 
+      throughout our campus community.
+    </div>
+  </div>
+  <hr class="medium">
+  <div class="showcase-title">
+    <h1>Common Area, Arts & Cultural Facilities and Gym</h1>
+  </div>
+
+  <div class="showcase">
+    <div class="showcase-content">
+      <img class="showcase-image" src=".resources/mario_jhocson_statue.jpg" alt="Showcase Image">
+      <div style=" margin-left: 50px;">
+        <td style="vertical-align: top;">
+        <h1>Mariano Jhocson Monument</h1>
+        <p>This statue of Don Mariano Fortunato Jhocson commemorates his dedication to instilling competence,
+          leadership, and high moral values in
+          the youth through education guided by the philosophy of Dynamic Filipinism. Explore this tribute to the
+          man whose legacy continues to inspire our vibrant academic community.</p>
+        </td>
+      </div>
+    </div>
+  </div>
+  <div class="showcase">
+    <div class="showcase-content">
+      <div class= "showcase-text" style = " margin-right: 50px;">
+        <td style="vertical-align: top;">
+          <h1>Accounting and Registrar Lobby</h1>
+          <p>Our Accounting and Registrar Lobby exemplifies the efficiency and support within our campus. Experience a
+            space dedicated to seamless financial and academic services, where modern facilities meet expert
+            assistance. </p>
+        </td>
+      </div>
+      <img src=".resources/accounting_and_registar.jpg" class="showcase-image">
+    </div>
+  </div>
+  <div class="showcase">
+    <div class="showcase-content">
+      <img src=" .resources/Jhocson_Memorial_wall.jpg" class="showcase-image">
+      <div style=" margin-left: 50px;">
+        <td style="vertical-align: top;">
+          <h1>Jhocson Memorial Wall</h1>
+          <p>The Wall of Awardees, where the Don Mariano Fortunato Jhocson Memorial Award shines as National
+            University's highest honor. Each plaque celebrates graduates who have excelled academically, demonstrated
+            exemplary leadership, and actively contributed to our community through diverse activities. This gallery
+            showcases their outstanding character, moral strength, and commitment to excellence, inspiring all who
+            visit to emulate their achievements. It's a testament to the vibrant spirit and legacy of National
+            University, celebrating the achievements that define our university community.</p>
+        </td>
+      </div>
+    </div>
+  </div>
+  <div class="showcase">
+    <div class="showcase-content">
+      <div class= "showcase-text" style = " margin-right: 50px;">
+        <td style="vertical-align: top;">
+          <h1>School Court/Gym</h1>
+          <p>Our gymnasium is a vibrant center for athletic excellence and school spirit. Explore our
+            top-tier facilities, featuring a spacious basketball court, modern equipment, and seating areas for
+            spectators. These snapshots capture the dynamic environment where our students train, compete, and achieve
+            their best. </p>
+        </td>
+        </td>
+      </div>
+      <img src=".resources/Basket-ball_court.jpg" class="showcase-image">
+    </div>
+  </div>
+
+  <hr class="medium">
+
+  <div class="showcase-title">
+    <h1>Learning Resources Conference and Library</h1>
+  </div>
+
+  <div class="showcase">
+    <div class="showcase-content">
+      <img src=" .resources/library2.jpg" class="showcase-image"">
+      <div style=" margin-left: 50px;">
+        <td style="vertical-align: top;">
+          <h1>Library</h1>
+          <p>Our library showcases the heart of intellectual and cultural life within our campus. Explore images of
+            our state-of-the-art facilities, including dedicated sections for undergraduate theses, Filipiniana
+            collections, reference materials, and reserved books. </p>
+        </td>
+      </div>
+    </div>
+  </div>
+  <div class="showcase">
+    <div class="showcase-content">
+      <div class= "showcase-text" style = " margin-right: 50px;">
+        <td style="vertical-align: top;">
+          <h1>Study Area</h1>
+          <p>Our library study area is designed to provide a quiet and comfortable environment for students to focus
+            and excel. Explore images of our spacious and well-lit study spaces, ideal for individual study or group
+            work. </p>
+        </td>
+      </div>
+      <img src=".resources/study_area.jpg" class="showcase-image">
+    </div>
+  </div>
+
+  <hr class="medium">
+
+  <div class="showcase-title">
+    <h1>Classrooms, Lecture Rooms and Computer Lab</h1>
+  </div>
+
+  <div class="showcase">
+    <div class="showcase-content">
+      <img src=".resources/lecture_room.jpg" class="showcase-image">
+      <div style=" margin-left: 50px;">
+        <td style="vertical-align: top;">
+          <h1>Lecture Room</h1>
+          <p>Welcome to our lecture room, designed for interactive learning experiences. Students engage with
+            multimedia content and participate actively in dynamic educational sessions. This space is tailored for
+            effective teaching and collaboration, integrating technology to enhance the learning process.
+          </p>  
+        </td>
+      </div>
+    </div>
+  </div>
+  <div class="showcase">
+    <div class="showcase-content">
+      <div class= "showcase-text" style = " margin-right: 50px;">
+        <td style="vertical-align: top;">
+            <h1>Computer Lab</h1>
+            <p>Welcome to our Computer Lab, where students are supported in coursework, research, and digital projects
+              like coding and simulations. Expert assistance ensures a seamless experience, empowering students to
+              develop essential skills effectively. Welcome to a space where technology meets education, fostering
+              innovation and practical learning.</p>
+        </td>
+      </div>
+      <img src=" .resources/computer_lab2.jpg" class="showcase-image">
+    </div>
+  </div>
+  <div class="showcase">
+    <div class="showcase-content">
+      <img src=" .resources/Nursing_labaratory.jpg" class="showcase-image"">
+      <div style=" margin-left: 50px;">
+        <td style="vertical-align: top;">
+          <h1>Nursing Labaratory</h1>
+          <p>
+            Welcome to our Nursing Laboratory, a dedicated space for hands-on training and skill development. Equipped
+            with advanced medical equipment and simulation technology, students gain practical experience in a
+            controlled environment. Expert guidance ensures comprehensive learning, preparing students for real-world
+            healthcare scenarios with confidence.</p>
+        </td>
+      </div>
+    </div>
+  </div>
+  <div class="showcase">
+    <div class="showcase-content">
+      <div class= "showcase-text" style = " margin-right: 50px;">
+        <td style="vertical-align: top;">
+          <h1>HRM Hot Kitchen</h1>
+          <p>Welcome to the Hot Kitchen, where culinary and HRM students hone their skills in a professional setting.
+            Equipped with modern appliances and tools, this lab fosters hands-on learning in food preparation, cooking
+            techniques, and kitchen management. Students gain practical experience under expert guidance, preparing
+            them for careers in the culinary industry.</p>
+        </td>
+      </div>
+      <img src=".resources/HRM_Kitchen.jpg" class="showcase-image">
+    </div>
+  </div>
+  <div class="showcase">
+    <div class="showcase-content">
+      <img src=" .resources/Engineering_Lab.jpg" class="showcase-image"">
+      <div style=" margin-left: 50px;">
+        <td style="vertical-align: top;">
+          <h1>Engineering Labaratory</h1>
+          <p>
+            Welcome to our Engineering Laboratory, where innovation meets hands-on learning. Equipped with
+            cutting-edge technology and specialized equipment, students engage in practical experiments and projects
+            across various disciplines. Expert guidance ensures a robust educational experience, preparing students
+            for challenges in engineering and technological advancement.</p>
+        </td>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- BOTTOM BANNER -->
+
+
+  <hr class="large" style="margin-top: 300px;">
+  <div class="banner-footer">
+    <img src="../.global-resources/NU_Logo.png">
+    <h1>NATIONAL<br>
+      UNIVERSITY
+    </h1>
+    <h2>Don't miss a thing! <b><u><a href="../Register/Register.html">Register</a></u></b> for NU Manila Main Campus
+      <br>
+      Gallery updates.
+    </h2>
+    <div class="banner-footer-links">
+      <table>
+        <tr>
+          <th>CONTACTS</th>
+          <th>GET IN TOUCH</th>
+        </tr>
+        <tr>
+          <td>national-u@gmail.com</td>
+          <td><a href="https://www.facebook.com/NationalUniversityPhilippines/" target="_blank">Facebook</a></td>
+        </tr>
+        <tr>
+          <td>(123) 456-7890</td>
+          <td><a href="https://www.instagram.com/nationaluph/?hl=en" target="_blank">Instagram</a></td>
+        </tr>
+        <tr>
+          <td>+63 912 345 6789</td>
+          <td><a href="https://www.linkedin.com/company/nationaluph/?originalSubdomain=ph" target="_blank">LinkedIn</a>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><a href="https://www.youtube.com/@NationalUniversityPhilippines" target="_blank">Youtube</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="banner-footer-lower">
+      <div class="banner-footer-lower-seperator"></div>
+      <p>© 2024 National University Manila Campus Gallery. All rights reserved</p>
+    </div>
+  </div>
+
+</body>
+
+</html>
